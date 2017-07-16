@@ -1,5 +1,6 @@
 #coding:utf-8連続ではない
 # 1分足を5分足にまとめる。
+
 import csv   #csvモジュールをインポートする
 import os
 
@@ -15,9 +16,10 @@ header = ['date','O','H','L','C']
 w = open('OUTPUT/AUDJPY_20150501.csv','wb')
 writer = csv.writer(w, lineterminator='\n')
 writer.writerow(header)
-
 for row in dataReader:
     writer.writerow(row)
-
+    print row[0] , row[2]
+    # ↑ここ！(๑╹ω╹๑ )
+    
 r.close()
 w.close()
